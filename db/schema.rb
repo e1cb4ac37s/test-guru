@@ -12,8 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_08_06_050701) do
 
-# Could not dump table "answers" because of following StandardError
-#   Unknown type 'false' for column 'correct'
+  create_table "answers", force: :cascade do |t|
+    t.string "body"
+    t.boolean "correct", default: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
