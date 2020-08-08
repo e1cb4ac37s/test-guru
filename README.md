@@ -1,5 +1,8 @@
 # README
 
-## Сущности
-1. Пользователь
-2. Тест
+## Models
+1. User
+2. Test
+  - id: integer
+  - title: string
+  - level: integer
