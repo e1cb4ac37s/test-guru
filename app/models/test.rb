@@ -9,4 +9,7 @@ class Test < ApplicationRecord
   scope :normal, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :by_category_title, -> (category_title) { joins(:category).where(categories: {title: category_title}).order(id: :desc).pluck(:title) }
+
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { greater_than_or_equal_to: 0 }
 end
