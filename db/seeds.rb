@@ -19,7 +19,7 @@ users.each do |user|
   tests = 3.times.map do |i|
     test = Test.create(
       title: Faker::Lorem.sentence(word_count: 3),
-      level: Faker::Number.within(range: 0..5),
+      level: Faker::Number.within(range: 0..10),
       category: categories[i],
       author: users.sample
     )
