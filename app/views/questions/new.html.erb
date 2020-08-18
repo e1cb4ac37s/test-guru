@@ -1,0 +1,35 @@
+<div class="<%= controller_name %>">
+  <h1>Создать вопрос</h1>
+
+  <form action="/tests/<%= @test.id %>/questions" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <div class="form-group">
+      <div class="form-control">
+        <label for="question-body">Вопрос</label>
+        <textarea name="body" id="question-body"></textarea>
+      </div>
+    </div>
+
+    <% 1.upto(4) do |i| %>
+      <div class="form-group">
+        <div class="form-control">
+          <label for="answer-body-<%= i %>">Ответ #<%= i %></label>
+          <textarea name="answers[][body]" id="answer-body-<%= i %>"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="answer-correct-<%= i %>">Правильный?</label>
+          <input type="checkbox" name="answers[][correct]" id="answer-correct-<%= i %>">
+        </div>
+      </div>
+    <% end%>
+
+    <div class="form-group">
+      <div class="form-control">
+        <button type="submit">
+          Создать!
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
