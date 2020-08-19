@@ -2,8 +2,8 @@
   <ul class="questions-list">
     <% @questions.each do |question| %>
       <li class="questions-list__item question">
-        <%= link_to question.body, test_question_path(@test, question), class: 'question__title' %>
-        <%= link_to 'Удалить', test_question_path(@test, question), class: 'question__delete-link', method: :delete, title: 'Удалить' %>
+        <%= link_to question.body, question_path(question), class: 'question__title' %>
+        <%= link_to 'Удалить', question_path(question), class: 'question__delete-link', method: :delete, title: 'Удалить' %>
       </li>
     <% end%>
   </ul>
