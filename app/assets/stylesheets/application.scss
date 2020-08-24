@@ -13,15 +13,26 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+  height: 100%;
+}
 body {
+  // <typography
   color: #414141;
   font-family: monospace;
-  .flash {
-    padding: 10px;
-    border-radius: 8px;
-    &.error {
-      color: red;
-      background-color: rgba(red, .3);
-    }
+  // typography />
+
+  // <sticky footer
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  .content {
+    flex: 1 0 auto;
   }
+  .footer {
+    flex-shrink: 0;
+    display: flex;
+    padding: 10px;
+  }
+  // sticky footer/>
 }

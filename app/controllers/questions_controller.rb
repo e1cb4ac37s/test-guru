@@ -1,21 +1,33 @@
 class QuestionsController < ApplicationController
   before_action :test, only: %i[index create new]
-  before_action :question, only: %i[show destroy]
+  before_action :question, only: %i[edit update show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_not_found
 
-  def index
-    @questions = @test.questions
+  def show
+    @test = @question.test
   end
 
-  def show; end
-
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
     question = @test.questions.new(question_params)
     if question.save
-      redirect_to action: 'index'
+      redirect_to question_path(question)
+    else
+      #
+    end
+  end
+
+  def edit
+    @test = @question.test
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to question_path(@question)
     else
       #
     end
@@ -29,7 +41,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.permit(:body)
+    params.require(:question).permit(:body)
   end
 
   def test

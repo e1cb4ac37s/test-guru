@@ -1,10 +1,12 @@
-<div class="<%= controller_name %> <%= action_name %>">
-  <div class="question">
-    <h3 class="question__title"><%= @question.body %></h3>
-    <ol>
-      <% @question.answers.each do |answer| %>
-        <li><p><%= answer.body %></p></li>
-      <% end %>
-    </ol>
-  </div>
+<div class="question">
+  <h3 class="question__title"><%= @question.body %></h3>
+  <ol>
+    <% @question.answers.each do |answer| %>
+      <li><p><%= answer.body %></p></li>
+    <% end %>
+  </ol>
 </div>
+
+<%= link_to 'Back to test', test_path(@test) %> |
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= render 'delete_link', question: @question %>
