@@ -1,7 +1,5 @@
 module QuestionsHelper
-  def question_header(test)
-    prefix = 'Create new ' if action_name == 'new'
-    prefix = 'Edit' if action_name == 'edit'
-    "#{prefix} \"#{test.title}\" question"
+  def question_header(test, question)
+    "#{question.persisted? ? 'Edit' : 'Create new'} \"#{test.title}\" question"
   end
 end

@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def create
     question = @test.questions.new(question_params)
     if question.save
-      redirect_to question_path(question)
+      redirect_to question
     else
       #
     end
@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to question_path(@question)
+      redirect_to @question
     else
       #
     end
