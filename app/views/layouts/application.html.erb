@@ -10,9 +10,16 @@
   </head>
 
   <body>
-    <% if flash[:error] %>
-      <div id="error" class="flash error"><%= flash[:error] %></div>
-    <% end%>
-    <%= yield %>
+    <div class="content">
+      <% if flash[:error] %>
+        <div id="error" class="flash error"><%= flash[:error] %></div>
+      <% end%>
+
+      <div class="<%= controller_name %> <%= action_name %>">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
