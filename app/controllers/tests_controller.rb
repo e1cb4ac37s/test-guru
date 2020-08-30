@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show edit]
+  before_action :set_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all.preload(:questions)
