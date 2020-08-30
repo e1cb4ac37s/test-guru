@@ -53,6 +53,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_from_not_found
-    redirect_to test_questions_path, flash: { error: 'Вопрос не найден!' }
+    redirect_to test_questions_path, flash: { error: 'Question is not found!' }
   end
 end
