@@ -1,15 +1,11 @@
-<%= link_to 'New test', new_test_path %>
-<ul>
-  <% @tests.each do |test| %>
-    <li>
-      <div class="test">
-        <div class="title"><%= link_to test.title, test_path(test) %> | Questions Count: <%= test.questions.size %></div>
-        <ol>
-          <% test.questions.each do |question| %>
-            <li><%= question.body %> | <%= link_to '->', question_path(question) %></li>
-          <% end %>
-        </ol>
-      </div>
-    </li>
-  <% end%>
-</ul>
+<p><%= link_to 'New test', new_test_path %></p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Questions</th>
+    <th colspan="4">Actions</th>
+  </tr>
+  <%= render @tests %>
+</table>
