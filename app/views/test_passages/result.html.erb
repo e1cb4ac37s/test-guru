@@ -1,1 +1,11 @@
 <h1>The "<%= @test_passage.test.title %>" test was completed!</h1>
+
+<div>Result: <%= @test_passage.progress %>%</div>
+
+<% if @test_passage.passed? %>
+  <div style="color: green">Contgarulations! You passed!</div>
+<% else %>
+  <div style="color: red">Keep trying. There is room to grow!</div>
+<% end %>
+
+<%= link_to 'Tests', tests_path %>
