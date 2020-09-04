@@ -2,8 +2,8 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, foreign_key: 'author_id', class_name: 'User'
   has_many :questions, dependent: :destroy
-  has_many :users_tests, dependent: :destroy
-  has_many :users, through: :users_tests
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages, source: :user
 
   scope :easy, -> { where(level: 0..1) }
   scope :normal, -> { where(level: 2..4) }
