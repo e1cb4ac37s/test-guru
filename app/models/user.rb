@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, foreign_key: 'author_id', class_name: 'Test'
 
+  has_secure_password
+
   def tests_by_level(level)
     tests.where(level: level.to_i)
   end
