@@ -1,4 +1,6 @@
-<%= form_with model: @test do |form| %>
+<%= form_with model: @test, local: true do |form| %>
+  <%= render 'shared/errors', resource: @test %>
+
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>
