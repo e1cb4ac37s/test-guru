@@ -10,9 +10,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %> Guru</b></p>
-    <% end %>
+    <%= render 'shared/nav' %>
     <div class="content">
       <% if flash[:error] %>
         <div id="error" class="flash error"><%= flash[:error] %></div>

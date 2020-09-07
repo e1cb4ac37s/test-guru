@@ -12,4 +12,11 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    session.clear
+    cookies[:_test_guru_email] = nil
+    flash.now[:notice] = 'You are now logged out. Come back asap ^_^.'
+    render :new
+  end
 end

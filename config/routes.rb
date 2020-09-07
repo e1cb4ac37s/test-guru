@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   get :login, to: 'sessions#new'
-  resources :sessions, only: :create
+  resource :sessions, only: %i[create destroy]
 
   resources :tests do
     resources :questions, shallow: true, except: 'index' do
