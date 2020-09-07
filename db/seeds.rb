@@ -18,5 +18,5 @@ users.each do |user|
     end
     test
   end
-  user.tests = tests
+  user.created_tests = tests
 end
