@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      save_url
       redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please.'
     end
 
@@ -17,5 +18,17 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def save_url
+    cookies[:_test_guru_saved_url] = request.url
+  end
+
+  def saved_url
+    cookies[:_test_guru_saved_url]
+  end
+
+  def clear_saved_url
+    cookies[:_test_guru_saved_url] = nil
   end
 end
