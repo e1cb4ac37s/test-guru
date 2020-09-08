@@ -1,11 +1,9 @@
-require_relative './validators/email_validator'
-
 class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, foreign_key: 'author_id', class_name: 'Test'
 
-  validates :email, presence: true, uniqueness: true, email: true
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 
