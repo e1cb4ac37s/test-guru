@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
   before_action :set_test, only: %i[show edit update destroy start]
-  before_action :set_user, only: :start
 
   def index
     @tests = Test.all.preload(:questions)
@@ -15,11 +14,12 @@ class TestsController < ApplicationController
   end
 
   def create
-    test = Test.new(test_params)
-    if test.save
-      redirect_to test
+    @test = Test.new(test_params)
+    @test.author = current_user
+    if @test.save
+      redirect_to @test
     else
-      #
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class TestsController < ApplicationController
     if @test.update(test_params)
       redirect_to @test
     else
-      #
+      render :edit
     end
   end
 
@@ -39,8 +39,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests << @test
-    redirect_to @user.test_passage(@test)
+    current_user.tests << @test
+    redirect_to current_user.test_passage(@test)
   end
 
   private
@@ -51,9 +51,5 @@ class TestsController < ApplicationController
 
   def set_test
     @test = Test.find(params[:id])
-  end
-
-  def set_user
-    @user = User.first
   end
 end

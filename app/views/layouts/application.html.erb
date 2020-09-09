@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'shared/nav' %>
     <div class="content">
       <% if flash[:error] %>
         <div id="error" class="flash error"><%= flash[:error] %></div>
