@@ -1,0 +1,11 @@
+<div class="test">
+  <div class="title"><%= @test.title %> | Questions Count: <%= @test.questions.size %></div>
+  <ol>
+    <%= render partial: 'questions/question', collection: @test.questions %>
+  </ol>
+</div>
+
+<%= link_to 'Back to tests', admin_tests_path %> |
+<%= link_to 'Edit', edit_admin_test_path(@test) %> |
+<%= link_to 'Delete', admin_test_path(@test), class: 'test__delete-link', method: :delete, title: 'Delete', data: { confirm: 'You sure?' } %> |
+<%= link_to 'New question', new_test_question_path(@test) %>
