@@ -3,7 +3,7 @@
 
   <div class="right">
     <% if user_signed_in? %>
-      <span class="user">Welcome, <b><%= current_user.email %> Guru</b></span> | <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <span class="user">Welcome, <b><%= appeal current_user %> Guru</b></span> | <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
     <% end %>
