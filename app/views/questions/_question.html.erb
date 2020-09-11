@@ -1,6 +1,0 @@
-<li class="question">
-  <span class="question__title"><%= question.body %></span><br>
-  <%= link_to 'Edit', edit_question_path(question) %> |
-  <%= link_to 'Delete', question_path(question), class: 'question__delete-link', method: :delete, title: 'Delete', data: { confirm: 'You sure?' } %> |
-  <%= link_to 'New answer', new_question_answer_path(question) %>
-</li>
