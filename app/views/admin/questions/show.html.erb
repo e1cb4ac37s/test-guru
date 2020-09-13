@@ -1,0 +1,21 @@
+<div class="question">
+  <h3 class="question__title"><%= @question.body %></h3>
+  <h4>Answers</h4>
+  <ol>
+    <% @question.answers.each do |answer| %>
+      <li>
+        <p><%= answer.body %> | <%= link_to '->', admin_answer_path(answer) %></p>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<%= link_to 'Back', admin_test_path(@test) %> |
+<%= link_to 'Edit', edit_admin_question_path(@question) %> |
+<%= link_to 'Delete',
+  admin_question_path(@question),
+  class: 'question__delete-link',
+  method: :delete,
+  title: 'Delete',
+  data: { confirm: 'You sure?' } %> |
+<%= link_to 'New answer', new_admin_question_answer_path(@question) %>

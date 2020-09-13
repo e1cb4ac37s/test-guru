@@ -1,7 +1,10 @@
 categories = 3.times.map { Category.create(title: Faker::Lorem.sentence(word_count: 2)) }
 
 users = 5.times.map do
-  User.create(email: Faker::Internet.unique.email, password_digest: BCrypt::Password.create('password'))
+  user = User.new(email: Faker::Internet.unique.email, password: 'password')
+  user.skip_confirmation!
+  user.save!
+  user
 end
 
 users.each do |user|

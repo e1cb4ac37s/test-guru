@@ -1,28 +1,13 @@
 class ApplicationController < ActionController::Base
+  before_action :permit_params, if: :devise_controller?
   before_action :authenticate_user!
 
-  helper_method :current_user, :logged_in?
-
-  private
-
-  def authenticate_user!
-    unless current_user
-      cookies[:_test_guru_saved_url] = request.url
-      redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please.'
-    end
-
-    cookies[:_test_guru_email] = current_user&.email
+  def after_sign_in_path_for(resource)
+    current_user.admin? ? admin_tests_path : (stored_location_for(resource) || root_path)
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
-  end
-
-  def saved_url
-    cookies[:_test_guru_saved_url]
+  def permit_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])
   end
 end
