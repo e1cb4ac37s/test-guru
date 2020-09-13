@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def appeal(current_user)
-    f, l, e = current_user.first_name, current_user.last_name, current_user.email
-    f && l ? "#{f} #{l}" : e
+    first_name, last_name, email = current_user.first_name, current_user.last_name, current_user.email
+    first_name && last_name ? "#{first_name} #{last_name}" : email
   end
 end
