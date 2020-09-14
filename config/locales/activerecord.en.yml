@@ -2,9 +2,16 @@ en:
   activerecord:
     models:
       test: "Test"
+      question: "Question"
+      answer: "Answer"
     attributes:
       test:
         title: "Title"
+      question:
+        body: "Question's body"
+      answer:
+        body: "Answer's body"
+        correct: "Correct"
     errors:
       messages:
         blank: "can't be blank"

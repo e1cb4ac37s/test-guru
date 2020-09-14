@@ -2,9 +2,16 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
     attributes:
       test:
         title: "Название"
+      question:
+        body: "Тело вопроса"
+      answer:
+        body: "Тело ответа"
+        correct: "Правильный"
     errors:
       messages:
         blank: "не может быть пустым"

@@ -3,9 +3,9 @@
 <div>Result: <%= @test_passage.progress %>%</div>
 
 <% if @test_passage.passed? %>
-  <div style="color: green">Contgarulations! You passed!</div>
+  <div style="color: green"><%= t('.success') %></div>
 <% else %>
-  <div style="color: red">Keep trying. There is room to grow!</div>
+  <div style="color: red"><%= t('.fail') %></div>
 <% end %>
 
-<%= link_to 'Tests', tests_path %>
+<%= link_to t('.tests'), tests_path %>

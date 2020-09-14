@@ -15,18 +15,75 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      greeting: "Welcome, %{appeal} Guru!"
+      login: "Log In"
+      logout: "Log Out"
+      signup: "Sign Up"
   tests:
     index:
       header: "Available tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
   test_passages:
     result:
       header: "The %{title} Test was Completed!!"
+      success: "Contgarulations! You passed!"
+      fail: "Keep trying. There is room to grow!"
+      tests: "Go to tests"
+    show:
+      header: "Passing the \"%{test_title}\" Test"
+      next: "Next"
   admin:
     tests:
       create:
         success: "Test was successfully created."
       index:
         header: "Available Tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        new: "Create New Test"
+      show:
+        back: "Back to tests list"
+        new: "Create new Question"
+        count: "Questions count"
+    questions:
+      new:
+        header: "Create new \"%{test_title}\" question"
+      edit:
+        header: "Edit new \"%{test_title}\" question"
+      show:
+        new: "Add Answer"
+    answers:
+      new:
+        header: "Add Answer"
+      show:
+        correct: "Correct"
+        incorrect: "Incorrect"
+    nav:
+      admin_header: "TestGuru Admin Panel"
+      greeting: "Welcome, %{appeal} Guru!"
+      login: "Log In"
+      logout: "Log Out"
+      signup: "Sign Up"
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  g:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    confirm: "You sure?"
+
+    tests_helper:
+      easy: "Easy"
+      normal: "Normal"
+      hard: "Hard"
