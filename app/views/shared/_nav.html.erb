@@ -1,11 +1,10 @@
-<div class="nav">
-  <%= link_to 'TestGuru', root_path, class: 'brand' %>
-
-  <div class="right">
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
     <% if user_signed_in? %>
-      <span class="user"><%= t('.greeting', appeal: appeal(current_user)) %></span> | <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      <%= t('.greeting', appeal: appeal(current_user)) %> | <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('.login'), new_user_session_path %> | <%= link_to t('.signup'), new_user_registration_path %>
     <% end %>
-  </div>
-</div>
+  </span>
+</nav>
