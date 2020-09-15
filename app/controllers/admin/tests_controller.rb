@@ -14,9 +14,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = current_user.tests.new(test_params)
+    @test = current_user.created_tests.new(test_params)
+    byebug
     if @test.save
-      redirect_to @test
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -26,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :edit
     end
