@@ -1,6 +1,5 @@
 module QuestionsHelper
-  def question_header(test, question)
+  def question_header(test)
     t('.header', test_title: test.title)
-    # "#{question.persisted? ? 'Edit' : 'Create new'} \"#{test.title}\" question"
   end
 end
