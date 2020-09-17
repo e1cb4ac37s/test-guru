@@ -13,10 +13,10 @@
 
   <body>
     <%= render 'shared/nav' %>
-    <div class="content">
-      <%= render 'shared/flash' %>
 
+    <div class="content">
       <div class="container <%= controller_name %> <%= action_name %>">
+        <%= render 'shared/flash' %>
         <%= yield %>
       </div>
     </div>
