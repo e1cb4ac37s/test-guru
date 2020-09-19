@@ -36,6 +36,9 @@ en:
       success: "Contgarulations! You passed!"
       fail: "Keep trying. There is room to grow!"
       tests: "Go to tests"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist."
     show:
       header: "Passing the \"%{test_title}\" Test"
       next: "Next"
