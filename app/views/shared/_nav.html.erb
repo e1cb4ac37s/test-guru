@@ -1,11 +1,28 @@
-<div class="nav">
-  <%= link_to 'TestGuru', root_path, class: 'brand' %>
-
-  <div class="right">
-    <% if user_signed_in? %>
-      <span class="user"><%= t('.greeting', appeal: appeal(current_user)) %></span> | <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('.login'), new_user_session_path %> | <%= link_to t('.signup'), new_user_registration_path %>
-    <% end %>
+<nav class="navbar navbar-expand-lg <%= current_user&.admin? ? 'navbar-dark bg-dark' : 'navbar-light bg-light' %>">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav mr-auto">
+      <% if current_user&.admin? %>
+        <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-item nav-link' %>
+      <% end %>
+    </div>
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        <%= t('.greeting', appeal: appeal(current_user)) %> | <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t('.login'), new_user_session_path %> | <%= link_to t('.signup'), new_user_registration_path %>
+      <% end %>
+    </span>
   </div>
-</div>
+</nav>

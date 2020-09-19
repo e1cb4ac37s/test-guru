@@ -3,6 +3,10 @@
 
 ru:
   devise:
+    email:
+      placeholder: "Введите почту"
+    password:
+      placeholder: "Введите пароль"
     confirmations:
       confirmed: "Ваша учётная запись успешно подтверждена."
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по подтверждению вашей учётной записи."

@@ -1,11 +1,17 @@
-<div class="test">
-  <div class="title"><%= @test.title %> | <%= t('.count') %>: <%= @test.questions.size %></div>
-  <ol>
-    <%= render partial: 'admin/questions/question', collection: @test.questions %>
-  </ol>
-</div>
+<h1 class="my-3"><%= @test.title %></h1>
 
 <%= link_to t('g.back'), admin_tests_path %> |
 <%= link_to t('g.edit'), edit_admin_test_path(@test) %> |
 <%= link_to t('g.delete'), admin_test_path(@test), class: 'test__delete-link', method: :delete, title: t('g.delete'), data: { confirm: t('g.confirm') } %> |
 <%= link_to t('.new'), new_admin_test_question_path(@test) %>
+
+<table class="table table-bordered mt-1">
+  <tr class="bg-success">
+    <th scope="col">
+      <span><%= t('.body') %></span>
+      <span>(<%= @test.questions.size %>)</span>
+    </th>
+    <th scope="col" colspan="3"><%= t('.actions') %></th>
+  </tr>
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
+</table>

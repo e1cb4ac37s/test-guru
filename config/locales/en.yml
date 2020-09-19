@@ -20,6 +20,7 @@ en:
       login: "Log In"
       logout: "Log Out"
       signup: "Sign Up"
+      admin_panel: "Admin Panel"
   tests:
     index:
       header: "Available tests"
@@ -50,9 +51,14 @@ en:
         actions: "Actions"
         new: "Create New Test"
       show:
+        actions: "Actions"
+        body: "Questions"
         back: "Back to tests list"
         new: "Create new Question"
-        count: "Questions count"
+      edit:
+        header: "Edit Test"
+      new:
+        header: "Create Test"
     questions:
       new:
         header: "Create new \"%{test_title}\" question"
@@ -60,6 +66,8 @@ en:
         header: "Edit new \"%{test_title}\" question"
       show:
         new: "Add Answer"
+      question:
+        new_answer: "Add Answer"
     answers:
       new:
         header: "Add Answer"
