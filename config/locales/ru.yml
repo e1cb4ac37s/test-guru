@@ -39,11 +39,12 @@ ru:
       fail: "Не бросайте попыток, Вы можете лучше!"
       tests: "К списку тестов"
     gist:
-      success: "Gist успешно сохранен!"
+      success: "Gist успешно сохранен: %{url}"
       failure: "Во время сохранения gist произошла ошибка."
     show:
       header: "Прохождение теста \"%{test_title}\""
       next: "Далее"
+      gist_question: "Добавить вопрос в gist"
   admin:
     tests:
       create:

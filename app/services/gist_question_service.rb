@@ -1,8 +1,9 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  def initialize(question, user, client: nil)
     @question = question
     @test = @question.test
     @client = client || GithubClient.new
+    @user = user
   end
 
   def call
@@ -13,13 +14,18 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "A question about #{@test.title} from TestGuru",
+      description: gist_description,
+      public: true,
       files: {
         'test-guru-question.txt' => {
           content: gist_content
         }
       }
     }
+  end
+
+  def gist_description
+    "TestGuru/#{@test.title}:::#{@question.body.truncate(25)}:::#{@user.email}"
   end
 
   def gist_content

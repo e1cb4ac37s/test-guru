@@ -42,6 +42,7 @@ en:
     show:
       header: "Passing the \"%{test_title}\" Test"
       next: "Next"
+      gist_question: "Gist question"
   admin:
     tests:
       create:
