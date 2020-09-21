@@ -37,7 +37,7 @@ en:
       fail: "Keep trying. There is room to grow!"
       tests: "Go to tests"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created at %{url}"
       failure: "An error occurred while saving gist."
     show:
       header: "Passing the \"%{test_title}\" Test"
