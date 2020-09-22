@@ -1,0 +1,12 @@
+<h1 class="my-3">Gists</h1>
+
+<table class="table table-bordered">
+  <tr class="bg-success">
+    <th scope="col"><%= t('activerecord.models.question') %></th>
+    <th scope="col">Email</th>
+    <th scope="col"><%= t('g.show') %></th>
+  </tr>
+  <% @gists.each do |gist| %>
+    <%= render 'gist', gist: gist %>
+  <% end %>
+</table>
