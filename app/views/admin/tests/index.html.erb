@@ -4,8 +4,12 @@
 <p><%= link_to 'Gists', admin_gists_path, class: 'btn btn-info' %></p>
 
 <table class="table table-bordered">
-  <tr class="bg-success">
-    <th scope="col"><%= t('.title') %></th>
+  <tr>
+    <th scope="col" class="sort-by-title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th scope="col"><%= t('.level') %></th>
     <th scope="col"><%= t('.questions') %></th>
     <th scope="col" colspan="3"><%= t('.actions') %></th>
