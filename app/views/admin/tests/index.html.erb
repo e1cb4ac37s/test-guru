@@ -5,11 +5,7 @@
 
 <table class="table table-bordered">
   <tr>
-    <th scope="col" class="sort-by-title pointer">
-      <%= t('.title') %>
-      <%= octicon 'arrow-up', class: 'text-success hide' %>
-      <%= octicon 'arrow-down', class: 'text-success hide' %>
-    </th>
+    <%= render 'shared/sortable_title', title: t('.title') %>
     <th scope="col"><%= t('.level') %></th>
     <th scope="col"><%= t('.questions') %></th>
     <th scope="col" colspan="3"><%= t('.actions') %></th>
