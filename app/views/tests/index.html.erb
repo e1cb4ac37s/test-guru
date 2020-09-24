@@ -1,8 +1,8 @@
 <h1 class="mb-3"><%= t('.header') %></h1>
 
 <table class="table table-bordered">
-  <tr class="bg-primary">
-    <th scope="col"><%= t('.title') %></th>
+  <tr>
+    <%= render 'shared/sortable_title', title: t('.title') %>
     <th scope="col"><%= t('.level') %></th>
     <th scope="col"><%= t('.questions') %></th>
     <th scope="col"><%= t('.actions') %></th>

@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./typography/icons";
 
 html, body {
   height: 100%;
@@ -22,4 +23,25 @@ body {
     padding: 10px;
   }
   // sticky footer/>
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+input {
+  &.error {
+    border: 2px solid var(--danger);
+    background: lighten(#dc3545, 35%);
+    outline: none;
+  }
+  &.success {
+    border: 2px solid var(--success);
+    background: lighten(#28a745, 35%);
+    outline: none;
+  }
 }
