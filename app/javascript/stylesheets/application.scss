@@ -32,3 +32,16 @@ body {
 .hide {
   display: none;
 }
+
+input {
+  &.error {
+    border: 2px solid var(--danger);
+    background: lighten(#dc3545, 35%);
+    outline: none;
+  }
+  &.success {
+    border: 2px solid var(--success);
+    background: lighten(#28a745, 35%);
+    outline: none;
+  }
+}
