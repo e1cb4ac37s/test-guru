@@ -15,16 +15,20 @@ function handle(el, target) {
 
     el.classList.add('error')
     el.classList.remove('success')
-  } else if (target.value) {
+    return;
+  }
+
+  if (target.value) {
     target.classList.add('success')
     target.classList.remove('error')
 
     el.classList.add('success')
     el.classList.remove('error')
-  } else if (!target.value) {
-    target.className = ''
-    el.className = ''
+    return;
   }
+
+  target.className = ''
+  el.className = ''
 }
 
 document.addEventListener('turbolinks:load', function() {
