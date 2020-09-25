@@ -3,6 +3,8 @@
 <p><%= link_to t('.new'), new_admin_test_path, class: 'btn btn-success' %></p>
 <p><%= link_to 'Gists', admin_gists_path, class: 'btn btn-info' %></p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-bordered">
   <tr>
     <%= render 'shared/sortable_title', title: t('.title') %>

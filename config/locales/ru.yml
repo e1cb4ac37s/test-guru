@@ -65,6 +65,8 @@ ru:
         header: "Редактировать тест"
       new:
         header: "Создать новый тест"
+      form_inline:
+        submit: "ОК"
     questions:
       new:
         header: "Создать вопрос для теста \"%{test_title}\""

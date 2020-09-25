@@ -1,0 +1,27 @@
+.test_passages {
+  .card {
+    position: relative;
+  }
+  .test-passage-progress {
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: lighten(#28a745, 35%);
+    font-size: smaller;
+    font-weight: bold;
+    color: darken(#28a745, 25%);
+    .slider {
+      height: 20px;
+      position: absolute;
+      left: 0;
+      background-color: #28a745;
+    }
+    .text {
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+  }
+}
