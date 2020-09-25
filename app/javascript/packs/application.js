@@ -10,6 +10,7 @@ require("channels")
 
 import './utilities/sorting'
 import './utilities/password-confirmation'
+import './utilities/form-inline'
 
 import 'bootstrap';
 import '../stylesheets/application'
