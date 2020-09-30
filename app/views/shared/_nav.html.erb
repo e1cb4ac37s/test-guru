@@ -13,6 +13,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto">
+      <% unless current_user&.admin? %>
+        <%= link_to 'Feedback', new_feedback_path, class: 'nav-item nav-link' %>
+      <% end %>
       <% if current_user&.admin? %>
         <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-item nav-link' %>
       <% end %>
