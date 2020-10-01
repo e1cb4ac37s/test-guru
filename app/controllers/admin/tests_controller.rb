@@ -14,7 +14,6 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = current_user.created_tests.new(test_params)
-    byebug
     if @test.save
       redirect_to admin_test_path(@test), notice: t('.success')
     else
@@ -41,8 +40,9 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
+    @test.test_passages.delete_all
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   private
