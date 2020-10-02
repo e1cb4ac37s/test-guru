@@ -5,8 +5,7 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -37,11 +36,11 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'octokit', '~> 4.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'octicons_helper'
+gem 'faker', '~> 2.13'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'faker', '~> 2.13'
 end
 
 group :development do
