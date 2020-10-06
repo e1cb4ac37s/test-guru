@@ -18,6 +18,7 @@
       <% end %>
       <% if current_user&.admin? %>
         <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-item nav-link' %>
+        <%= link_to t('g.badges'), admin_badges_path, class: 'nav-item nav-link' %>
       <% end %>
     </div>
     <span class="navbar-text">

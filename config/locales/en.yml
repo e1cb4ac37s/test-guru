@@ -1,5 +1,8 @@
 en:
   helpers:
+    select_category_prompt: "Select a Category"
+    select_test_prompt: "Select a Test"
+    select_rule_prompt: "Select a Rule"
     submit:
       test:
         create: "Create Test"
@@ -9,7 +12,6 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-        category_prompt: "Select a Category"
   shared:
     errors:
       header:
@@ -80,6 +82,14 @@ en:
       show:
         correct: "Correct"
         incorrect: "Incorrect"
+    badges:
+      index:
+        new: "Create Badge"
+        no-badges: "There are no badges, create the first one!"
+      new:
+        new: "Create Badge"
+      edit:
+        edit: "Edit Badge"
     nav:
       admin_header: "TestGuru Admin Panel"
       greeting: "Welcome, %{appeal} Guru!"
@@ -91,6 +101,7 @@ en:
       subject: "You just completed the TestGuru test!"
 
   g:
+    badges: "Награды"
     show: "Show"
     edit: "Edit"
     delete: "Delete"

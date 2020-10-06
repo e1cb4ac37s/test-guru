@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :feedbacks, only: %i[new create]
 
+  resources :badges, only: %i[index]
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
@@ -25,6 +27,9 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: 'index'
       end
     end
+
+    resources :badges
+
     resources :gists, only: :index
   end
 end

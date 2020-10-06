@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./typography/icons";
 @import "./test-passage.scss";
+@import "./badges.scss";
 
 html, body {
   height: 100%;
@@ -21,7 +22,12 @@ body {
   .footer {
     flex-shrink: 0;
     display: flex;
-    padding: 10px;
+    padding: 15px 15px 10px;
+    background-color: var(--gray-dark);
+    color: rgba(#fff, .5);
+    a {
+      color: var(--green);
+    }
   }
   // sticky footer/>
 }
