@@ -10,11 +10,17 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, foreign_key: 'author_id', class_name: 'Test'
+  has_many :users_badges, dependent: :destroy
+  has_many :badges, through: :users_badges
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def tests_by_level(level)
     tests.where(level: level.to_i)
+  end
+
+  def tests_by_category(category)
+    tests.where(category_id: category.id)
   end
 
   def test_passage(test)

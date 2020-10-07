@@ -1,6 +1,9 @@
 .test_passages {
   .card {
     position: relative;
+    .correct {
+      color: var(--green);
+    }
   }
   .test-passage-progress {
     position: absolute;

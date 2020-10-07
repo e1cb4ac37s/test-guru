@@ -21,7 +21,6 @@ class Admin::BadgesController < Admin::BaseController
       rule: form[:rule],
       rule_arg: form[arg]
       )
-    byebug
     if @badge.save
       redirect_to admin_badges_path
     else

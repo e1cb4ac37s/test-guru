@@ -1,7 +1,5 @@
 <tr>
-  <td><%= badge.image %></td>
-  <td><%= badge.name %></td>
-  <td><%= badge.description %></td>
-  <td>Update</td>
-  <td>Delete</td>
+  <td class="align-middle"><%= image_tag "badges/#{badge.image}", width: '50x50' %></td>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= badge.description %></td>
 </tr>
