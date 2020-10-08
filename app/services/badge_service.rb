@@ -45,10 +45,16 @@ class BadgeService
   end
 
   def passed_all_by_level(level)
-    @user.tests_by_level(level).uniq.length == Test.where(level: level).count if @test.level == level
+    if @test.level == level
+      passed_tests = @user.tests_by_level(level).uniq.map { |t| t.test_passage }.select { |tp| passed? }
+      @user.passed_tests.uniq.length == Test.where(level: level).count
+    end
   end
 
   def passed_all_by_category(category_id)
-    @user.tests_by_category(@test.category).uniq.length == Test.where(category_id: category_id).count if @test.category.id == category_id
+    if @test.category.id == category_id
+      passed_tests = @user.tests_by_category(@test.category).uniq.map { |t| t.test_passage }.select { |tp| passed? }
+      passed_tests.length == Test.where(category_id: category_id).count
+    end
   end
 end
