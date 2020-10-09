@@ -1,0 +1,8 @@
+<tr>
+  <td class="align-middle"><%= image_tag "badges/#{badge.image}", width: '50x50' %></td>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= badge.description %></td>
+  <td class="align-middle">
+    <%= link_to t('g.edit'), edit_admin_badge_path(badge) %>
+  </td>
+</tr>

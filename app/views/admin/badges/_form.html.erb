@@ -1,0 +1,65 @@
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+  <div class="card border-success mb-3">
+    <div class="card-body">
+      <%= render 'shared/errors', resource: @badge %>
+      <div class="form-group">
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </p>
+
+        <p>
+          <%= f.label :image %>
+          <%= f.text_field :image, class: 'form-control' %>
+        </p>
+
+        <p>
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </p>
+
+        <% unless edit %>
+
+          <p>
+            <%= f.label :rule %>
+            <%= f.select :rule,
+              options_for_select(BadgeService::HASH.map { |id, v| [v[:rule], id] }),
+              { prompt: t('helpers.select_rule_prompt') },
+              class: 'form-control'
+            %>
+          </p>
+
+          <p>
+            <%= f.label :level %>
+            <%= f.number_field :level, class: 'form-control' %>
+          </p>
+
+          <p>
+            <%= f.label :test, t('activerecord.models.test') %>
+            <%= f.collection_select :test,
+              Test.all,
+              :id,
+              :title,
+              { prompt: t('helpers.select_test_prompt') },
+              class: 'form-control'
+            %>
+          </p>
+
+          <p>
+            <%= f.label :category, t('activerecord.models.category') %>
+            <%= f.collection_select :category,
+              Category.all,
+              :id,
+              :title,
+              { prompt: t('helpers.select_category_prompt') },
+              class: 'form-control'
+            %>
+          </p>
+
+        <% end %>
+
+        <%= f.submit class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+<% end%>

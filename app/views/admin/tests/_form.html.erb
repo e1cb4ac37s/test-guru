@@ -15,7 +15,7 @@
 
         <p>
           <%= f.label :category_id %>
-          <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: t('helpers.label.test.category_prompt') }, class: 'form-control' %>
+          <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: t('helpers.select_category_prompt') }, class: 'form-control' %>
         </p>
 
         <%= f.submit class: 'btn btn-success' %>

@@ -1,0 +1,5 @@
+en:
+  badge_service:
+    first_attempt_rule: For successfully passing test from first attempt
+    passed_all_by_category_rule: For successfully passing all tests for given category
+    passed_all_by_level_rule: For successfully passing all tests for given level

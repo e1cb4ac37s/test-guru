@@ -9,7 +9,7 @@
       :id,
       :body,
       include_hidden: false do |b| %>
-      <p>
+      <p class="<%= b.object.correct ? 'correct' : 'incorrect' %>">
         <%= b.check_box id: "answer_ids_#{b.object.id}" %>
         <%= b.label %>
       </p>
