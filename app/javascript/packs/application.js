@@ -12,6 +12,7 @@ import './utilities/sorting'
 import './utilities/password-confirmation'
 import './utilities/form-inline'
 import './utilities/progress'
+import './utilities/timer'
 
 import 'bootstrap';
 import '../stylesheets/application'

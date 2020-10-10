@@ -29,6 +29,21 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def time_left
+    return nil if test.duration.nil? || completed?
+
+    test.duration * 60 + created_at.to_time.to_i - Time.now.to_i
+  end
+
+  def expired?
+    time_left && time_left <= 0
+  end
+
+  def finish!
+    self.current_question = nil
+    save!
+  end
+
   private
 
   def before_validation_set_first_question

@@ -18,6 +18,11 @@
           <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: t('helpers.select_category_prompt') }, class: 'form-control' %>
         </p>
 
+        <p>
+          <%= f.label :duration %>
+          <%= f.number_field :duration, class: 'form-control' %>
+        </p>
+
         <%= f.submit class: 'btn btn-success' %>
       </div>
     </div>

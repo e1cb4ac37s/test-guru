@@ -6,6 +6,11 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
+    if @test_passage.expired?
+      redirect_to result_test_passage_path(@test_passage)
+      return
+    end
+
     if params[:answer_ids]&.any?
       @test_passage.accept!(params[:answer_ids])
       if @test_passage.completed?
